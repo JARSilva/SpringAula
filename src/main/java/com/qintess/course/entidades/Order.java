@@ -115,6 +115,12 @@ public class Order implements Serializable{
 		return true;
 	}
 	
-	
+	public Double getTotal() {
+		Double sum = 0.0;
+		for(OrderItem item : itens) {
+			sum += item.getSubTotal();
+		}
+		return sum;
+	}
 
 }
